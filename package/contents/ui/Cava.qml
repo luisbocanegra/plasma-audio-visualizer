@@ -105,9 +105,9 @@ waves=${root.waves}
     }
     onCavaConfigChanged: {
         if (barCount > 0 && cavaConfig != "") {
-            process.command = `exec cava -p /dev/stdin <<-EOF
+            process.command = `bash -c 'exec cava -p /dev/stdin <<-EOF
 ${cavaConfig}
-EOF
+EOF'
 `;
         }
     }
