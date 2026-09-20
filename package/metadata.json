@@ -20,7 +20,7 @@
         "Id": "luisbocanegra.audio.visualizer",
         "License": "GPL-3.0",
         "Name": "Plasma Audio Visualizer",
-        "Version": "3.6.1",
+        "Version": "3.6.2",
         "Website": "https://github.com/luisbocanegra/plasma-audio-visualizer"
     },
     "X-Plasma-API-Minimum-Version": "6.0"
