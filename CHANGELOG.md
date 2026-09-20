@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.2](https://github.com/luisbocanegra/plasma-audio-visualizer/compare/v3.6.1...v3.6.2) (2026-09-20)
+
+
+### Bug Fixes
+
+* added bash wrapper for non-bashlike shell support ([a45fb72](https://github.com/luisbocanegra/plasma-audio-visualizer/commit/a45fb72d5eeb48322879613f779253c922bc03a4)), closes [#192](https://github.com/luisbocanegra/plasma-audio-visualizer/issues/192)
+
 ## [3.6.1](https://github.com/luisbocanegra/plasma-audio-visualizer/compare/v3.6.0...v3.6.1) (2026-09-04)
 
 
