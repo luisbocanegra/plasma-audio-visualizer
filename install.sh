@@ -4,6 +4,9 @@ if [ -d "build" ]; then
     rm -rf build
 fi
 
+# Compile translations (.po -> .mo) so source installs are localized
+python3 ./kpac i18n --no-merge
+
 # Install widget for current user
 cmake -B build/plasmoid -S . -DINSTALL_PLASMOID=ON -DCMAKE_INSTALL_PREFIX="$HOME/.local"
 cmake --build build/plasmoid

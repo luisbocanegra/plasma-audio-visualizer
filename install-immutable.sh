@@ -4,6 +4,9 @@ if [ -d "build" ]; then
     rm -rf build
 fi
 
+# Compile translations (.po -> .mo) so source installs are localized
+python3 ./kpac i18n --no-merge
+
 # Install widget and C++ plugin for current user
 #
 # NOTE: For the C++ plugin to work add the `QML_IMPORT_PATH` environment variable
