@@ -12,6 +12,7 @@ KCM.SimpleKCM {
     property alias cfg_barCount: barCountSpinbox.value
     property alias cfg_framerate: framerateSpinbox.value
     property alias cfg_autoSensitivity: autoSensitivity.value
+    property alias cfg_scaling: scalingCombobox.currentValue
     property alias cfg_sensitivityEnabled: sensitivityEnabled.checked
     property alias cfg_sensitivity: sensitivitySpinbox.value
     property alias cfg_lowerCutoffFreq: lowerCutoffFreqSpinbox.value
@@ -104,6 +105,32 @@ KCM.SimpleKCM {
                 }
                 Kirigami.ContextualHelpButton {
                     toolTipText: i18n("will attempt to decrease sensitivity if the bars peak and increase slowly as ong as the bars don't peak. 0 = off, 1 = normal, 2..n = more aggressive<br>Increase to make sensitivity increase even faster.")
+                }
+            }
+
+            RowLayout {
+                Kirigami.FormData.label: i18n("Scaling:")
+                ComboBox {
+                    id: scalingCombobox
+                    textRole: "label"
+                    valueRole: "value"
+                    model: {
+                        [
+                            {
+                                label: i18n("Linear"),
+                                value: "linear"
+                            },
+                            {
+                                label: i18n("Logarithmic (decibel)"),
+                                value: "decibel"
+                            }
+                        ];
+                    }
+                    onActivated: root.cfg_scaling = currentValue
+                    Component.onCompleted: currentIndex = indexOfValue(root.cfg_scaling)
+                }
+                Kirigami.ContextualHelpButton {
+                    toolTipText: i18n("Linear scaling provides a clear visualisation of music when using fewer bars (less than 100). While Logarithmic scaling more correctly resembles how sound is perceived.")
                 }
             }
 
@@ -515,15 +542,16 @@ KCM.SimpleKCM {
                 Kirigami.FormData.label: i18n("Enabled:")
                 CheckBox {
                     id: eqEnabled
+                    enabled: root.cfg_scaling === "linear"
                 }
                 Kirigami.ContextualHelpButton {
-                    toolTipText: i18n("Adjust frequencies by a multiplication factor, more bands equals more precision.")
+                    toolTipText: i18n("Adjust frequencies by a multiplication factor, more bands equals more precision. Not supported with logarithmic scaling.")
                     Layout.alignment: Qt.AlignHCenter
                 }
             }
         }
         Eq {
-            enabled: eqEnabled.checked
+            enabled: eqEnabled.checked && root.cfg_scaling === "linear"
             Layout.preferredWidth: parent.width - Kirigami.Units.gridUnit * 2
             Layout.alignment: Qt.AlignHCenter
             fromFreq: root.cfg_lowerCutoffFreq
