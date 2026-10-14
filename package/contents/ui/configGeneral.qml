@@ -4,11 +4,12 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 import org.kde.plasma.core as PlasmaCore
+import "code/enum.js" as Enum
 
 KCM.SimpleKCM {
     id: root
     property alias cfg_desktopWidgetBg: desktopWidgetBackgroundRadio.value
-    property alias cfg_hideWhenIdle: hideWhenIdleCheckbox.checked
+    property int cfg_visibilityMode
     property int cfg_visualizerStyle
     property string cfg_barColors
     property string cfg_waveFillColors
@@ -21,24 +22,41 @@ KCM.SimpleKCM {
         id: parentLayout
         Layout.fillWidth: true
 
+        RadioButton {
+            Kirigami.FormData.label: i18n("Visibility:")
+            text: i18n("Always")
+            checked: cfg_visibilityMode === Enum.VisibilityMode.Always
+            onCheckedChanged: if (checked) cfg_visibilityMode = Enum.VisibilityMode.Always
+            ButtonGroup.group: visibilityModeGroup
+        }
         RowLayout {
-            Kirigami.FormData.label: i18n("Auto-hide when idle:")
-            CheckBox {
-                id: hideWhenIdleCheckbox
+            RadioButton {
+                id: idleRadio
+                text: i18n("Show while audio plays and n seconds after.")
+                checked: cfg_visibilityMode === Enum.VisibilityMode.WhileAudioPlays
+                onCheckedChanged: if (checked) cfg_visibilityMode = Enum.VisibilityMode.WhileAudioPlays
+                ButtonGroup.group: visibilityModeGroup
             }
-            Label {
-                text: i18n("After")
-            }
+            Label { text: i18n("n =") }
             SpinBox {
                 id: idleTimerSpinbox
-                enabled: hideWhenIdleCheckbox.checked
+                enabled: idleRadio.checked
                 from: 1
                 to: 60
             }
-            Label {
-                text: i18n("seconds")
+        }
+        RowLayout {
+            RadioButton {
+                text: i18n("While a media player is open")
+                checked: cfg_visibilityMode === Enum.VisibilityMode.WhileMediaPlayerOpen
+                onCheckedChanged: if (checked) cfg_visibilityMode = Enum.VisibilityMode.WhileMediaPlayerOpen
+                ButtonGroup.group: visibilityModeGroup
+            }
+            Kirigami.ContextualHelpButton {
+                toolTipText: i18n("Show the widget based on media player status (MPRIS) instead of audio activity (other sounds won't show it). Stays visible while playback is paused.")
             }
         }
+        ButtonGroup { id: visibilityModeGroup }
 
         RadioButton {
             Kirigami.FormData.label: i18n("Desktop background:")

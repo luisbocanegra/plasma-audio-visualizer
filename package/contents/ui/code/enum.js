@@ -25,3 +25,9 @@ const WaveMode = {
   Square: 1,
   Triangle: 2
 };
+
+const VisibilityMode = {
+  Always: 0,
+  WhileAudioPlays: 1,
+  WhileMediaPlayerOpen: 2
+};
