@@ -144,6 +144,9 @@ Item {
 
         onPaint: {
             const ctx = getContext("2d");
+            if (!ctx) {
+                return;
+            }
             ctx.reset();
             if (fixAlign) {
                 ctx.translate(0.0, 0.5);
