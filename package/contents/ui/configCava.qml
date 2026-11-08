@@ -70,7 +70,7 @@ KCM.SimpleKCM {
                 id: framerateSpinbox
                 Kirigami.FormData.label: i18n("Framerate:")
                 from: 1
-                to: 144
+                to: 240
             }
 
             RowLayout {
