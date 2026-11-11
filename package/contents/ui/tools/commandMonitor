@@ -16,7 +16,7 @@ async def monitor_command_output(cmd: str, ws_url: str) -> None:
     """
     proc = None
     try:
-        async with websockets.connect(ws_url) as ws:
+        async with websockets.connect(ws_url, ping_interval=None) as ws:
             await ws.send(f"PID: {os.getpid()}")
 
         print(f"Starting process {cmd} ...")
@@ -26,7 +26,7 @@ async def monitor_command_output(cmd: str, ws_url: str) -> None:
             stderr=asyncio.subprocess.PIPE,
         )
 
-        async with websockets.connect(ws_url) as ws:
+        async with websockets.connect(ws_url, ping_interval=None) as ws:
             assert proc.stdout is not None
             async for line in proc.stdout:
                 await ws.send(line.decode().rstrip())
@@ -36,9 +36,14 @@ async def monitor_command_output(cmd: str, ws_url: str) -> None:
                 await ws.send(f"ERROR: {line.decode().rstrip()}")
 
         await proc.wait()
-    except asyncio.CancelledError:
+    except (asyncio.CancelledError, KeyboardInterrupt):
         if proc is not None and proc.returncode is None:
             print(f"Stopping process pid: {proc.pid} {cmd} ...")
+            proc.kill()
+            await proc.wait()
+    except Exception as e:
+        print(f"Command monitor error: {e}", file=sys.stderr)
+        if proc is not None and proc.returncode is None:
             proc.kill()
             await proc.wait()
 
@@ -60,5 +65,7 @@ if __name__ == "__main__":
 
     try:
         loop.run_until_complete(main_task)
+    except Exception:
+        pass
     finally:
         loop.close()

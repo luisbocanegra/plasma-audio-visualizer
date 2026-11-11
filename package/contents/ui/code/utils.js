@@ -72,7 +72,7 @@ function hexToQtColor(hex) {
 function buildCanvasGradient(ctx, smooth, gradientStops, orientation, height, width, circleMode = false) {
   let gradient;
   // FIXME: maybe guard against this earlier
-  if (height < 1 || width < 1) {
+  if (!ctx || height < 1 || width < 1 || !gradientStops || !gradientStops.length) {
     return gradient;
   }
   if (circleMode) {
