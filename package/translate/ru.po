@@ -402,11 +402,11 @@ msgstr "Для fifo 'source' будет путём к fifo-файлу."
 
 #: ../contents/ui/configCava.qml
 msgid ""
-"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:"
-"EE:FF' will be squeezelite's MAC address."
+"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where "
+"'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address."
 msgstr ""
-"Для shmem 'source' будет /squeezelite-AA:BB:CC:DD:EE:FF, где 'AA:BB:CC:DD:EE:"
-"FF' это MAC-адрес squeezelite."
+"Для shmem 'source' будет /squeezelite-AA:BB:CC:DD:EE:FF, где "
+"'AA:BB:CC:DD:EE:FF' это MAC-адрес squeezelite."
 
 #: ../contents/ui/configCava.qml
 msgid ""
