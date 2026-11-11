@@ -394,11 +394,11 @@ msgstr "对于FIFO，'source'为FIFO文件路径。"
 
 #: ../contents/ui/configCava.qml
 msgid ""
-"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:"
-"EE:FF' will be squeezelite's MAC address."
+"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where "
+"'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address."
 msgstr ""
-"对于shmem，'source'为/squeezelite-AA:BB:CC:DD:EE:FF，其中'AA:BB:CC:DD:EE:"
-"FF'为squeezelite的MAC地址。"
+"对于shmem，'source'为/squeezelite-AA:BB:CC:DD:EE:FF，其"
+"中'AA:BB:CC:DD:EE:FF'为squeezelite的MAC地址。"
 
 #: ../contents/ui/configCava.qml
 msgid ""
