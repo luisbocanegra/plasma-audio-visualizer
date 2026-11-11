@@ -117,6 +117,7 @@ PlasmoidItem {
         autoSensitivity: Plasmoid.configuration.autoSensitivity
         sensitivityEnabled: Plasmoid.configuration.sensitivityEnabled
         sensitivity: Plasmoid.configuration.sensitivity
+        scaling: Plasmoid.configuration.scaling
         lowerCutoffFreq: Plasmoid.configuration.lowerCutoffFreq
         higherCutoffFreq: Plasmoid.configuration.higherCutoffFreq
         inputMethod: Plasmoid.configuration.inputMethod

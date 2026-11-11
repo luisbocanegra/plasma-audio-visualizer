@@ -9,6 +9,7 @@ Item {
     property int monstercat // boolean
     property int waves // boolean
     property int autoSensitivity
+    property string scaling
     property bool sensitivityEnabled
     property int sensitivity
     property int lowerCutoffFreq
@@ -49,6 +50,7 @@ autosens=${root.autoSensitivity}
 lower_cutoff_freq=${root.lowerCutoffFreq}
 higher_cutoff_freq=${root.higherCutoffFreq}
 sleep_timer=${root.cavaSleepTimer}
+scaling=${root.scaling}
 `;
 
         if (root.sensitivityEnabled) {
