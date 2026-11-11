@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.7.0](https://github.com/luisbocanegra/plasma-audio-visualizer/compare/v3.6.1...v3.7.0) (2026-11-11)
+
+
+### Features
+
+* increase framerate limit to 240 ([26efd01](https://github.com/luisbocanegra/plasma-audio-visualizer/commit/26efd018739d7d679c6ffd27dc5568f61a094b40))
+
+
+### Bug Fixes
+
+* added bash wrapper for non-bashlike shell support ([a45fb72](https://github.com/luisbocanegra/plasma-audio-visualizer/commit/a45fb72d5eeb48322879613f779253c922bc03a4)), closes [#192](https://github.com/luisbocanegra/plasma-audio-visualizer/issues/192)
+* compile translations in user install scripts ([#198](https://github.com/luisbocanegra/plasma-audio-visualizer/issues/198)) ([883cdbc](https://github.com/luisbocanegra/plasma-audio-visualizer/commit/883cdbcf594f433009066ad577c21a5bd49589d4))
+
 ## [3.6.1](https://github.com/luisbocanegra/plasma-audio-visualizer/compare/v3.6.0...v3.6.1) (2026-09-04)
 
 
