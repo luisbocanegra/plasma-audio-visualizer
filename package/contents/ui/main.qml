@@ -192,6 +192,16 @@ PlasmoidItem {
         }
     }
 
+    Connections {
+        target: Plasmoid
+        function onDestroyedChanged(destroyed) {
+            if (destroyed)
+                cava.stop();
+            else
+                cava.start();
+        }
+    }
+
     TasksModel {
         id: tasksModel
         screenGeometry: Plasmoid.containment.screenGeometry
