@@ -627,6 +627,9 @@ Kirigami.FormLayout {
             onColorsChanged: canvas.requestPaint()
             onPaint: {
                 var ctx = getContext("2d");
+                if (!ctx) {
+                    return;
+                }
                 ctx.fillStyle = gradient;
                 ctx.fillRect(0, 0, width, height);
             }
