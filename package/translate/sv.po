@@ -402,11 +402,11 @@ msgstr "För fifo kommer 'source' att vara sökvägen till fifo-filen."
 
 #: ../contents/ui/configCava.qml
 msgid ""
-"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:"
-"EE:FF' will be squeezelite's MAC address."
+"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where "
+"'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address."
 msgstr ""
-"För shmem kommer 'source' att vara /squeezelite-AA:BB:CC:DD:EE:FF där 'AA:BB:"
-"CC:DD:EE:FF' är squeezelites MAC-adress."
+"För shmem kommer 'source' att vara /squeezelite-AA:BB:CC:DD:EE:FF där "
+"'AA:BB:CC:DD:EE:FF' är squeezelites MAC-adress."
 
 #: ../contents/ui/configCava.qml
 msgid ""
@@ -430,8 +430,8 @@ msgid ""
 "For jack 'source' will be the name of the JACK server to connect to, e.g. "
 "'foobar'. Default: 'default'."
 msgstr ""
-"För jack kommer 'source' att vara namnet på JACK-servern att ansluta till, t."
-"ex. 'foobar'. Standard: 'default'."
+"För jack kommer 'source' att vara namnet på JACK-servern att ansluta till, "
+"t.ex. 'foobar'. Standard: 'default'."
 
 #: ../contents/ui/configCava.qml
 msgid "Sample rate:"
