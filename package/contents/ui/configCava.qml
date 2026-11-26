@@ -40,6 +40,7 @@ KCM.SimpleKCM {
     property alias cfg_eqEnabled: eqEnabled.checked
     property var cfg_eq
 
+    property alias cfg_autoStartCava: autoStartCava.checked
     property alias cfg_pauseOnFullScreenWindow: pauseOnFullScreenWindow.checked
     property alias cfg_pauseOnMaximizedWindow: pauseOnMaximizedWindow.checked
 
@@ -55,6 +56,12 @@ KCM.SimpleKCM {
             Kirigami.Separator {
                 Kirigami.FormData.isSection: true
                 Kirigami.FormData.label: i18n("General")
+            }
+
+            CheckBox {
+                id: autoStartCava
+                Kirigami.FormData.label: i18n("Start CAVA automatically:")
+                text: i18n("Enabled")
             }
 
             Button {

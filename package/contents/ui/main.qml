@@ -137,6 +137,7 @@ PlasmoidItem {
         idleCheck: main.hideWhenIdle
         idleTimer: Plasmoid.configuration.idleTimer
         cavaSleepTimer: Plasmoid.configuration.cavaSleepTimer
+        autoStartCava: Plasmoid.configuration.autoStartCava
         onIdleChanged: {
             main.logger.info("cava.idle:", idle);
             main.updateStatus();
@@ -205,6 +206,13 @@ PlasmoidItem {
     TasksModel {
         id: tasksModel
         screenGeometry: Plasmoid.containment.screenGeometry
+    }
+
+    Component.onCompleted: {
+        if (!Plasmoid.configuration.autoStartCava && !Plasmoid.configuration._stopCava) {
+            Plasmoid.configuration._stopCava = true;
+            Plasmoid.configuration.writeConfig();
+        }
     }
 
     onPauseByWindowChanged: {

@@ -13,6 +13,7 @@ Item {
     property string pid: ""
     property bool isReady: false
     property bool pendingRestart: false
+    property bool autoStartCava: true
 
     readonly property string toolsDir: Qt.resolvedUrl("../tools").toString().substring(7) + "/"
     readonly property string commandMonitorTool: "'" + toolsDir + "commandMonitor'"
@@ -93,6 +94,9 @@ Item {
         if (command == "")
             return;
         logger.debug("ProcessMonitorFallback.onCommandChanged:", command);
+        if (!autoStartCava && !running) {
+            return;
+        }
         restart();
     }
 }

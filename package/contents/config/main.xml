@@ -169,6 +169,9 @@
         <!-- ./package/contents/ui/code/enum.js[Orientation] -->
         <default>1</default>
     </entry>
+    <entry name="autoStartCava" type="Bool">
+      <default>true</default>
+    </entry>
     <entry name="_stopCava" type="Bool">
       <default>false</default>
     </entry>

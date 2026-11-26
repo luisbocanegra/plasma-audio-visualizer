@@ -34,6 +34,7 @@ Item {
     property int idleTimer
     property int cavaSleepTimer
     property int asciiMaxRange: 100
+    property bool autoStartCava: true
     readonly property bool hasError: error !== "" || loadingFailed
     readonly property string error: process.stderr
     readonly property list<string> loadingErrors: process.loadingErrors
@@ -113,6 +114,7 @@ EOF'
     }
     ProcessMonitor {
         id: process
+        autoStartCava: root.autoStartCava
         onStdoutChanged: {
             let output = process.stdout.trim();
             if (output.endsWith(';')) {
