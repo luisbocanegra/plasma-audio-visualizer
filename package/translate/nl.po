@@ -404,11 +404,11 @@ msgstr "Voor fifo zal ‘source’ de locatie van het fifo-bestand zijn."
 
 #: ../contents/ui/configCava.qml
 msgid ""
-"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:"
-"EE:FF' will be squeezelite's MAC address."
+"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where "
+"'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address."
 msgstr ""
-"Voor shmem zal ‘source’ /squeezelite-AA:BB:CC:DD:EE:FF zijn, waar ‘AA:BB:CC:"
-"DD:EE:FF’ staat voor squeezelites MAC-adres."
+"Voor shmem zal ‘source’ /squeezelite-AA:BB:CC:DD:EE:FF zijn, waar "
+"‘AA:BB:CC:DD:EE:FF’ staat voor squeezelites MAC-adres."
 
 #: ../contents/ui/configCava.qml
 msgid ""
