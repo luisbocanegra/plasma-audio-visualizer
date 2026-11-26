@@ -6,6 +6,7 @@ Item {
     id: root
 
     property string command: ""
+    property bool autoStartCava: true
     readonly property string stdout: process.stdout ?? ""
     readonly property string stderr: process.stderr ?? ""
     readonly property bool forceFallback: false
@@ -51,7 +52,9 @@ Item {
             logger.debug("Trying to load", source);
             component = Qt.createComponent(source);
             if (component.status === Component.Ready) {
-                process = component.createObject(root);
+                process = component.createObject(root, {
+                    autoStartCava: Qt.binding(() => root.autoStartCava)
+                });
                 process.command = root.command;
                 break;
             } else {
