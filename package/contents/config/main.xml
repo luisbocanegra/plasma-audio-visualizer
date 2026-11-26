@@ -31,6 +31,9 @@
     <entry name="sensitivity" type="Int">
       <default>100</default>
     </entry>
+    <entry name="scaling" type="String">
+      <default>linear</default>
+    </entry>
     <entry name="lowerCutoffFreq" type="Int">
       <default>50</default>
     </entry>
